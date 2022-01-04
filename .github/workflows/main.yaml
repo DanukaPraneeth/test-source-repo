@@ -16,7 +16,7 @@ jobs:
       with:
         source_folder: 'folder1'
         destination_repo: 'DanukaPraneeth/test-target-repo'
-        destination_folder: 'folder1'
+        destination_folder: ''
         destination_base_branch: 'master'
         destination_head_branch: 'master'
         user_email: 'a.g.danuka@gmail.com'
