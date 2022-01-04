@@ -19,6 +19,6 @@ jobs:
         destination_folder: 'folder1'
         destination_base_branch: 'master'
         destination_head_branch: 'master'
-        user_email: 'danuka@gmail.com'
+        user_email: 'a.g.danuka@gmail.com'
         user_name: 'DanukaPraneeth'
         pull_request_reviewers: 'DanukaPraneeth'
