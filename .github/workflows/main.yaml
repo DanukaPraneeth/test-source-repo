@@ -10,7 +10,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Create pull request
-      uses: DanukaPraneeth/pr-library@v1.0
+      uses: DanukaPraneeth/pr-library@v1.1
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
