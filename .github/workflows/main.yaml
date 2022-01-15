@@ -23,11 +23,12 @@ jobs:
         - name: Copy file
           run: |
             ls -ltr
+            ls -ltr ../
 #            cp -r ./test-source-repo/* ./test-target-repo/
             
         - name: Push To Repo2
           run: |
-            cd ./test-target-repo
+#            cd ./test-target-repo
             echo "Test" > testfile
             git add .
             git config user.name "DanukaPraneeth"
