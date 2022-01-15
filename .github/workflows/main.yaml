@@ -11,18 +11,17 @@ jobs:
         - name: Checkout main-project
           uses: actions/checkout@v2
           with:
-            path: ./test-source-repo        
+            path: ./test-target-repo
 
         - name: Come back
           run: |
-            cd ..
             ls -ltr
 
 
         - name: Checkout secondary-project
           uses: actions/checkout@v2
           with: 
-            repository: DanukaPraneeth/test-target-repo
+            repository: DanukaPraneeth/test-source-repo
             token: ${{ secrets.MY_TOKEN || github.token }}
             path: ./
 
@@ -40,6 +39,8 @@ jobs:
           run: |
             ls 
             echo "Test" > testfile
+            cp -r ./test-source-repo/* ./
+            rm -rf ./test-source-repo
             git add .
             git config user.name "DanukaPraneeth"
             git config user.email “danuka@gmail.com”
