@@ -17,7 +17,7 @@ jobs:
           uses: actions/checkout@master
           with: 
             repository: DanukaPraneeth/test-target-repo
-            token: ${{ secrets.Token }}
+            token: ${{ secrets.token }}
             path: ./
 
         - name: Copy file
