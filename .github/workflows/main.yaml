@@ -11,7 +11,7 @@ jobs:
         - name: Checkout main-project
           uses: actions/checkout@v2
           with:
-            path: ./
+            path: ./test-source-repo        
 
         - name: Checkout secondary-project
           uses: actions/checkout@v2
@@ -22,11 +22,13 @@ jobs:
 
         - name: Copy file
           run: |
-            cp -r ./test-source-repo/* ./test-target-repo/
+            ls -ltr
+#            cp -r ./test-source-repo/* ./test-target-repo/
             
         - name: Push To Repo2
           run: |
             cd ./test-target-repo
+            echo "Test" > testfile
             git add .
             git config user.name "DanukaPraneeth"
             git config user.email “danuka@gmail.com”
