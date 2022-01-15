@@ -13,6 +13,12 @@ jobs:
           with:
             path: ./test-source-repo        
 
+        - name: Come back
+          run: |
+            cd ..
+            ls -ltr
+
+
         - name: Checkout secondary-project
           uses: actions/checkout@v2
           with: 
