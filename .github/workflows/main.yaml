@@ -28,7 +28,7 @@ jobs:
             
         - name: Push To Repo2
           run: |
-#            cd ./test-target-repo
+            ls 
             echo "Test" > testfile
             git add .
             git config user.name "DanukaPraneeth"
