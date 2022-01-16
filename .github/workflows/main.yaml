@@ -38,9 +38,8 @@ jobs:
             ls -ltr
             ls -ltr ../
             pwd
-            cp -r ./test-source-repo/main_old.yaml ./test-target-repo/main_old.yaml
+            echo "Before coping the file"
             ls -ltr ./test-target-repo/
-
 
             FILE=./test-source-repo/main_old.yaml
             FILE2=./test-source-repo/main_new.yaml
@@ -55,6 +54,9 @@ jobs:
               echo "Copying $FILE2"
               cp -R $FILE2 ./test-target-repo/
             fi
+
+            echo "After coping the file"
+            ls -ltr ./test-target-repo/
 
 
         - name: Push To Repo2
@@ -71,6 +73,7 @@ jobs:
             git config user.email “danuka@gmail.com”
             git remote set-url origin https://DanukaPraneeth:${{ secrets.MY_TOKEN || github.token }}@github.com/DanukaPraneeth/test-target-repo.git
             git remote -v
+            echo "Below is my new branch name with the time stamp as the unique string"
             git checkout -b $BRANCH_NAME
             git commit -am "Update files"
             git push --set-upstream origin $BRANCH_NAME
