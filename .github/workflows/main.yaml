@@ -36,7 +36,6 @@ jobs:
         - name: Copy file
           run: |
             ls -ltr
-            ls -ltr ../
             pwd
             echo "Before coping the file"
             ls -ltr ./test-target-repo/
@@ -67,12 +66,9 @@ jobs:
             pwd
             TIME_NOW=$(date +%s)
             BRANCH_NAME="update-from-${TIME_NOW}"
-            git remote -v
             git add .
-            git config user.name "DanukaPraneeth"
-            git config user.email “danuka@gmail.com”
-            git remote set-url origin https://DanukaPraneeth:${{ secrets.MY_TOKEN || github.token }}@github.com/DanukaPraneeth/test-target-repo.git
-            git remote -v
+            git config user.name "Danuka"
+            git config user.email "danuka@gmail.com"
             echo "Below is my new branch name with the time stamp as the unique string"
             git checkout -b $BRANCH_NAME
             git commit -am "Update files"
