@@ -42,7 +42,7 @@ jobs:
             git config user.email “danuka@gmail.com”
             git checkout -b update-form
             git commit -am "Update files"
-            git push https://${{ secrets.MY_TOKEN || github.token }}@github.com/DanukaPraneeth/test-target-repo.git --set-upstream origin update-form
+            git push https://${{ secrets.MY_TOKEN || github.token }}@github.com/DanukaPraneeth/test-target-repo.git
             
         - name: pull-request
           uses: repo-sync/pull-request@v2
