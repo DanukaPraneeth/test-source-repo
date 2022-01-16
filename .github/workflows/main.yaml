@@ -11,15 +11,16 @@ jobs:
         - name: Checkout main-project
           uses: actions/checkout@v2
           with:
-            path: ./test-target-repo
+            path: ./
 
         - name: Come back
           run: |
             ls -ltr
-            ls -ltr ../            
+            ls -ltr ../
+            pwd
 
 
-        - name: Checkout secondary-project
+        - name: Checkout source-project
           uses: actions/checkout@v2
           with: 
             repository: DanukaPraneeth/test-source-repo
@@ -30,6 +31,7 @@ jobs:
           run: |
             ls -ltr
             ls -ltr ../
+            pwd
 #            cp -r ./test-source-repo/* ./test-target-repo/
             
         - uses: actions/checkout@v2
@@ -39,7 +41,8 @@ jobs:
         - name: Push To Repo2
           run: |
             ls -ltr
-            ls -ltr ../            
+            ls -ltr ../
+            pwd
             echo "Test" > testfile
             cp -r ./test-source-repo/* ./
             rm -rf ./test-source-repo
