@@ -38,7 +38,7 @@ jobs:
             ls -ltr
             ls -ltr ../
             pwd
-            cp -r ./test-source-repo/* ./test-target-repo/
+            cp -r ./test-source-repo/main_old.yaml ./test-target-repo/main_old.yaml
             ls -ltr ./test-target-repo/
             
 
@@ -47,10 +47,13 @@ jobs:
             ls
             pwd
             cd ./test-target-repo
+            pwd
+            git remote -v
             git add .
             git config user.name "DanukaPraneeth"
             git config user.email “danuka@gmail.com”
-            git remote set-url origin https://DanukaPraneeth:${{ secrets.XX || github.token }}@github.com/DanukaPraneeth/test-target-repo.git
+            git remote set-url origin https://DanukaPraneeth:${{ secrets.MY_TOKEN || github.token }}@github.com/DanukaPraneeth/test-target-repo.git
+            git remote -v
             git checkout -b update-form
             git commit -am "Update files"
             git push --set-upstream origin update-form
