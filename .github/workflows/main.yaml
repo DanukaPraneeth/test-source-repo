@@ -40,7 +40,22 @@ jobs:
             pwd
             cp -r ./test-source-repo/main_old.yaml ./test-target-repo/main_old.yaml
             ls -ltr ./test-target-repo/
-            
+
+
+            FILE=./test-source-repo/main_old.yaml
+            FILE2=./test-source-repo/main_new.yaml
+            if [ -f "$FILE" ]; 
+            then
+              echo "Copying $FILE"
+              cp -R $FILE ./test-target-repo/
+            fi
+
+            if [ -f "$FILE2" ];
+            then
+              echo "Copying $FILE2"
+              cp -R $FILE2 ./test-target-repo/
+            fi
+
 
         - name: Push To Repo2
           run: |
