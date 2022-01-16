@@ -16,6 +16,7 @@ jobs:
         - name: Come back
           run: |
             ls -ltr
+            ls -ltr ../            
 
 
         - name: Checkout secondary-project
@@ -37,7 +38,8 @@ jobs:
 
         - name: Push To Repo2
           run: |
-            ls 
+            ls -ltr
+            ls -ltr ../            
             echo "Test" > testfile
             cp -r ./test-source-repo/* ./
             rm -rf ./test-source-repo
