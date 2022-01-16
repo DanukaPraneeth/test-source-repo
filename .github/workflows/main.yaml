@@ -32,9 +32,6 @@ jobs:
             ls -ltr ../
 #            cp -r ./test-source-repo/* ./test-target-repo/
             
-        - uses: actions/checkout@v2
-          with:
-            token: ${{ secrets.MY_TOKEN || github.token }}
 
         - name: Push To Repo2
           run: |
