@@ -8,14 +8,20 @@ jobs:
         name: Replicate File
         
         steps:
+        - name: Check the downloaded repo status
+          run: |
+            pwd
+            ls -ltr
+            rm -rf *
+            ls -ltr
+        
         - name: Checkout main-project
           uses: actions/checkout@v2
           with:
             path: ./test-source-repo       
 
-        - name: Come back
+        - name: Check the downloaded repo status
           run: |
-            cd ..
             ls -ltr
             pwd
 
@@ -33,6 +39,7 @@ jobs:
             ls -ltr ../
             pwd
             cp -r ./test-source-repo/* ./test-target-repo/
+            ls -ltr ./test-target-repo/
             
 
         - name: Push To Repo2
